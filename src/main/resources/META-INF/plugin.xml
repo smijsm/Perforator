@@ -1,5 +1,5 @@
 <idea-plugin url="https://github.com/smijsm/Perforator">
-    <id>com.example.perforator</id>
+    <id>com.perforator.perforator</id>
     <name>Perforator - Continuous profiling integration</name>
     <version>1.0.0</version>
     <vendor email="smijsm@gmail.com">Michael Solovev</vendor>

@@ -77,6 +77,5 @@ tasks {
     // Patch plugin.xml build range
     patchPluginXml {
         sinceBuild.set("251.26094.121")
-        untilBuild.set("")
     }
 }
