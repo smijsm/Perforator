@@ -1,6 +1,6 @@
 @file:Suppress("UnstableApiUsage")
 
-package com.example.perforator
+package com.perforator.perforator
 
 import com.intellij.codeInsight.daemon.DaemonCodeAnalyzer
 import com.intellij.lang.annotation.Annotator

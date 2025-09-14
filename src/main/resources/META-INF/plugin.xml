@@ -41,20 +41,20 @@
     <extensions defaultExtensionNs="com.intellij">
         <projectConfigurable
                 parentId="tools"
-                instance="com.example.perforator.PerforatorConfigurable"
-                id="com.example.perforator.PerforatorConfigurable"
+                instance="com.perforator.perforator.PerforatorConfigurable"
+                id="com.perforator.perforator.PerforatorConfigurable"
                 displayName="Perforator"/>
         <annotator
                 language="JAVA"
-                implementationClass="com.example.perforator.PerforatorGutterAnnotator"/>
+                implementationClass="com.perforator.perforator.PerforatorGutterAnnotator"/>
         <annotator
                 language="kotlin"
-                implementationClass="com.example.perforator.PerforatorGutterAnnotator"/>
+                implementationClass="com.perforator.perforator.PerforatorGutterAnnotator"/>
     </extensions>
 
     <actions>
-        <action id="com.example.perforator.FetchFromPyroscopeAction"
-                class="com.example.perforator.FetchFromPyroscopeAction"
+        <action id="com.perforator.perforator.FetchFromPyroscopeAction"
+                class="com.perforator.perforator.FetchFromPyroscopeAction"
                 text="Fetch Profiling Data"
                 description="Fetch profiling data from Grafana Pyroscope and show performance toolbar">
             <add-to-group group-id="ToolsMenu" anchor="last"/>

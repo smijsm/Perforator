@@ -9,7 +9,7 @@ plugins {
     id("org.jetbrains.intellij.platform") version "2.7.2"
 }
 
-group = "com.example"
+group = "com.perforator"
 version = "1.0.0"
 
 java {

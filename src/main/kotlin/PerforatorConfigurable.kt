@@ -1,4 +1,4 @@
-package com.example.perforator
+package com.perforator.perforator
 
 import com.intellij.openapi.components.service
 import com.intellij.openapi.fileEditor.FileEditorManager
