@@ -1,4 +1,4 @@
-# ⏲ Perforator – Continuous Profiling Integration for JetBrains IDE
+# Perf🕳️rat🕳️r – Continuous Profiling Integration for JetBrains IDE
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![IntelliJ Plugin](https://img.shields.io/badge/IntelliJ-Plugin-blue.svg)](https://plugins.jetbrains.com/)
