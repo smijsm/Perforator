@@ -89,7 +89,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
     - Logs key steps for troubleshooting fetch and parse flow
 
 #### 📋 Supported Configurations
-- **IDE Compatibility**: IntelliJ IDEA 2025.1.3+
+- **IDE Compatibility**: IntelliJ IDEA 2025.1.2+, Android Studio 2025.1.2+
 - **Java Compatibility**: Java 17+
 - **Backend**: Grafana Pyroscope
 - **Profiles**: CPU (nanoseconds → ms), Memory (bytes → MB)

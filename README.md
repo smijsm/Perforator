@@ -30,7 +30,7 @@ Performance work is most effective when grounded in production behavior. Perfora
 ## 🚀 Quick Start
 
 ### Prerequisites
-- IntelliJ IDEA 2025.1.3 or later
+- IntelliJ IDEA 2025.1.2+ / Android Studio 2025.1.2+
 - Access to a Grafana Pyroscope instance (URL + optional Basic Auth)
 
 ### Installation
