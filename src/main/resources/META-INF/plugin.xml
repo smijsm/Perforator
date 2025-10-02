@@ -1,32 +1,26 @@
 <idea-plugin url="https://github.com/smijsm/Perforator">
     <id>com.perforator.perforator</id>
     <name>Perforator - Continuous profiling integration</name>
-    <version>1.0.0</version>
+    <version>1.1.0</version>
     <vendor email="smijsm@gmail.com">Michael Solovev</vendor>
     <description><![CDATA[
-    <b>IntelliJ IDEA plugin for continuous profiling integration:</b>
-    <ol>
-    <li>Connect to your Grafana Pyroscope instance and fetch profiling data.</li>
-    <li>View CPU and memory performance metrics directly in the editor.</li>
-    <li>See hot spots highlighted with gutter badges showing execution time or memory usage.</li>
-    <li>Right-click badges to copy performance optimization prompts for Junie or Claude Code.</li>
-    </ol>
-    Current backend: Grafana Pyroscope. Other integrations are planned.<br/>
-    Supported profile types: CPU (execution time), Memory (allocation size).<br/><br/>
-    <b>Features:</b>
+    Bring continuous profiling data into your IDE. Fetch data from Grafana Pyroscope or load Google Cloud Profiler files (.pb.gz), visualize performance hotspots with inline gutter badges, and generate AI optimization prompts.
+
+    <h3>Features:</h3>
     <ul>
-    <li>Real-time continuous profiling data visualization in code.</li>
-    <li>Configurable hot thresholds for CPU (ms) and Memory (MB).</li>
-    <li>Right-click badges to copy performance optimization prompts for AI agents.</li>
+    <li><strong>Multiple Data Sources:</strong> Grafana Pyroscope API + Google Cloud Profiler files</li>
+    <li><strong>Inline Performance Badges:</strong> CPU time or memory allocation next to code</li>
+    <li><strong>File Upload Support:</strong> Load .pb.gz files from Google Cloud Profiler</li>
+    <li><strong>AI Integration:</strong> Right-click badges to copy performance optimization prompts</li>
+    <li><strong>Configurable Thresholds:</strong> Customize hot spot detection</li>
     </ul>
-    <br/>
-    <b>Setup:</b>
-    <ol>
-    <li>Settings → Tools → Perforator: set Base URL, Service Name, optional Basic Auth.</li>
-    <li>Tools → Fetch profiling data.</li>
-    <li>Right-click gutter badges to copy AI optimization prompts.</li>
-    <li>(Optional) Install Junie or Claude Code, add and configure Grafana MCP server.</li>
-    </ol>
+
+    <h3>Supported:</h3>
+    <ul>
+    <li><strong>Languages:</strong> Java, Kotlin</li>
+    <li><strong>Profile Types:</strong> CPU time, Wall time (Google Profiler only), Memory</li>
+    <li><strong>IDEs:</strong> IntelliJ IDEA 2025.1.3+</li>
+    </ul>
     <br/>
     <b>Contribute:</b> <a href="https://github.com/smijsm/Perforator">Project on GitHub</a>
 ]]>
@@ -50,6 +44,13 @@
         <annotator
                 language="kotlin"
                 implementationClass="com.perforator.perforator.PerforatorGutterAnnotator"/>
+        <notificationGroup id="Perforator Notifications"
+                           displayType="BALLOON"
+                           key="notification.group.perforator"/>
+        <notificationGroup id="Perforator"
+                           displayType="BALLOON"/>
+        <projectService serviceImplementation="com.perforator.perforator.PerforatorSettingsService"/>
+        <projectService serviceImplementation="com.perforator.perforator.PerforatorService"/>
     </extensions>
 
     <actions>
@@ -57,6 +58,12 @@
                 class="com.perforator.perforator.FetchFromPyroscopeAction"
                 text="Fetch Profiling Data"
                 description="Fetch profiling data from Grafana Pyroscope and show performance toolbar">
+            <add-to-group group-id="ToolsMenu" anchor="last"/>
+        </action>
+        <action id="LoadProfileFileAction"
+                class="com.perforator.perforator.LoadProfileFileAction"
+                text="Load Profile File (.pb.gz)"
+                description="Load profiling data from a downloaded .pb.gz file">
             <add-to-group group-id="ToolsMenu" anchor="last"/>
         </action>
     </actions>

@@ -20,8 +20,9 @@ Performance work is most effective when grounded in production behavior. Perfora
 - 🧭 Editor toolbar to switch CPU/Memory, select time windows, and set hot thresholds
 - 🔒 Optional Basic Auth for secured Grafana Pyroscope instances
 - ⚡ One-click fetch via Tools menu
+- 📁 Google Cloud Profiler file upload support (.pb.gz files)
 - 🧠 Right-click a badge to copy an AI optimization prompt
-    - Prompts are tailored for Grafana MCP server (https://github.com/grafana/mcp-grafana) which can be used with JetBrains Junie, Claude Code, or any other AI agent which supports MCP servers.
+    - Pyroscope: prompts are tailored for Grafana MCP server (https://github.com/grafana/mcp-grafana) which can be used with JetBrains Junie, Claude Code, or any other AI agent which supports MCP servers.
 - 🧩 Language support: Java and Kotlin
 
 ---
@@ -49,22 +50,39 @@ Open Settings → Tools → Perforator and configure:
 
 ## 🎯 How to Use
 
+### Option 1: Fetch from Grafana Pyroscope via API
 1. Open a source file that belongs to the profiled service.
 2. Use Tools → Fetch Profiling Data.
-3. The Perforator toolbar appears at the top of the editor:
-    - Switch between CPU/Memory profiles and pick a time window
-    - Adjust hot thresholds (ms for CPU, MB for Memory)
+3. Gutter badges show inline metrics next to relevant lines.
+4. The Perforator toolbar appears at the top of the editor.
+5. Switch between CPU/Memory profiles and pick a time window.
+6. Adjust hot thresholds (ms for CPU, MB for Memory).
+7. Right-click a badge to copy an AI prompt.
+8. Paste prompt into your AI agent (Junie, Claude Code, etc.) which has integration with the Grafana MCP.
+9. Let your AI agent refactor your code to improve performance.
+
+### Option 2: Load Google Cloud Profiler File
+1. Download a .pb.gz file from Google Cloud Profiler (CPU time / Wall time / Heap)
+2. Use Tools → Load Profile File (.pb.gz).
+3. Select your downloaded profile file.
 4. Gutter badges show inline metrics next to relevant lines.
-5. Right-click a badge to copy an AI prompt.
-6. Paste this into an agent connected to Grafana MCP server (usable with Junie, Claude Code, or any MCP-capable agent).
+5. The Perforator toolbar appears at the top of the editor.
+6. Adjust hot thresholds (ms for CPU, MB for Memory).
+7. Right-click a badge to copy an AI prompt.
+8. Paste prompt into your AI agent (Junie, Claude Code, etc.).
+9. Let your AI agent refactor your code to improve performance.
 
 ---
 
 ## 🏗️ Supported Inputs
 
+- Data Sources
+    - Grafana Pyroscope (via API)
+    - Google Cloud Profiler (.pb.gz files)
 - Profile Types
-    - CPU: displays execution time in milliseconds
-    - Memory: displays allocation in megabytes
+    - CPU: displays execution time
+    - Memory: displays allocation
+    - Wall Time: displays execution time (only for Google Profiler)
 - Time Windows
     - `now-15m`, `now-30m`, `now-1h`, `now-1d`, `now-3d`, `now-1w`
 - Languages
@@ -87,7 +105,8 @@ Open Settings → Tools → Perforator and configure:
 - Run locally: `./gradlew runIde`
 
 ### IDE Integration Points
-- Tools → Fetch Profiling Data
+- Tools → Fetch Profiling Data (Grafana Pyroscope)
+- Tools → Load Profile File (.pb.gz) (Google Cloud Profiler)
 - Settings → Tools → Perforator
 
 ---

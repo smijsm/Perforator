@@ -5,6 +5,42 @@ All notable changes to the Perforator plugin will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.0] - 2025-10-01
+
+### 🎉 Google Cloud Profiler Support
+
+#### ✨ New Features
+- **File Upload Support**
+  - Load .pb.gz files from Google Cloud Profiler
+  - Automatic profile type detection (CPU vs Memory vs Wall time)
+  - Automatic GZIP decompression for .gz files
+
+#### 🧠 Enhanced AI Prompts
+- **Context-Aware Prompts**
+  - Different prompt formats for Pyroscope vs file-based data
+  - Pyroscope prompts include service name context
+  - File-based prompts focus on method optimization without service context
+
+#### 🔧 Technical Improvements
+- **Protobuf Integration**
+  - Added Google perftools profiles protobuf parsing
+  - Enhanced sample type detection for accurate value extraction
+  - Improved method name resolution from protobuf function names
+
+#### 🎯 UX Enhancements
+- **Tools Menu Integration**
+  - New "Load Profile File (.pb.gz)" action in Tools menu
+  - Clear file type filtering in file chooser dialog
+  - Progress indication during file processing
+  - Error notifications for failed file loads
+
+#### 📋 Compatibility
+- **File Format Support**: .pb.gz
+- **Profile Types**: CPU (nanoseconds), Memory (alloc_space bytes)
+- **Data Sources**: Grafana Pyroscope API + Google Cloud Profiler files
+
+---
+
 ## [1.0.0] - 2025-09-14
 
 ### 🎉 Initial Release — Continuous Profiling in Your IDE

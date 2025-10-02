@@ -7,10 +7,11 @@ plugins {
     id("org.jetbrains.kotlin.jvm") version "2.0.21"
     id("org.jetbrains.kotlin.plugin.serialization") version "2.0.21"
     id("org.jetbrains.intellij.platform") version "2.7.2"
+    id("com.google.protobuf") version "0.9.5"
 }
 
 group = "com.perforator"
-version = "1.0.0"
+version = "1.1.0"
 
 java {
     sourceCompatibility = JavaVersion.VERSION_17
@@ -31,6 +32,7 @@ repositories {
 dependencies {
     implementation(kotlin("stdlib"))
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.3")
+    implementation("com.google.protobuf:protobuf-java:3.24.3")
 
     intellijPlatform {
         // IntelliJ IDEA Community 2025.1.3
@@ -40,7 +42,6 @@ dependencies {
         bundledPlugin("com.intellij.java")
 
         // Useful platform tooling
-        instrumentationTools()
         pluginVerifier()
         testFramework(TestFrameworkType.Platform)
     }
@@ -70,12 +71,26 @@ tasks {
         }
     }
 
-    withType<Test>().configureEach {
-        useJUnitPlatform()
-    }
-
     // Patch plugin.xml build range
     patchPluginXml {
         sinceBuild.set("251.26094.121")
+    }
+}
+
+protobuf {
+    protoc {
+        artifact = "com.google.protobuf:protoc:3.24.3"
+    }
+    // No deprecated generatedFilesBaseDir setting used
+}
+
+sourceSets {
+    main {
+        proto {
+            srcDir("src/main/proto/google/pprof/proto") // Your proto files location
+        }
+        java {
+            srcDir("src/generated/main/java") // Generated Java source here
+        }
     }
 }
