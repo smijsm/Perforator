@@ -4,7 +4,7 @@
 [![IntelliJ Plugin](https://img.shields.io/badge/IntelliJ-Plugin-blue.svg)](https://plugins.jetbrains.com/)
 [![Backend: Grafana Pyroscope](https://img.shields.io/badge/Backend-Grafana%20Pyroscope-orange.svg)](#)
 
-Bring continuous profiling data from Grafana Pyroscope into the editor, highlight hot spots inline, and generate MCP-ready AI optimization prompts for Junie, Claude Code or other AI agents.
+Bring continuous profiling data from Grafana Pyroscope or Google Cloud Profiler into the editor, highlight hot spots inline, and generate MCP-ready AI optimization prompts for Junie, Claude Code or other AI agents.
 
 ---
 
