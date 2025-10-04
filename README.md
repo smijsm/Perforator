@@ -18,11 +18,12 @@ Performance work is most effective when grounded in production behavior. Perfora
 
 - 🔥 Inline gutter badges with CPU time or memory usage per method
 - 🧭 Editor toolbar to switch CPU/Memory, select time windows, and set hot thresholds
+- 🧭 API integration with Grafana Pyroscope or Google Cloud Profiler file upload (.pb.gz files)
 - 🔒 Optional Basic Auth for secured Grafana Pyroscope instances
 - ⚡ One-click fetch via Tools menu
-- 📁 Google Cloud Profiler file upload support (.pb.gz files)
 - 🧠 Right-click a badge to copy an AI optimization prompt
     - Pyroscope: prompts are tailored for Grafana MCP server (https://github.com/grafana/mcp-grafana) which can be used with JetBrains Junie, Claude Code, or any other AI agent which supports MCP servers.
+    - Google Profiler: can be used with JetBrains Junie, Claude Code, or any other AI agent.
 - 🧩 Language support: Java and Kotlin
 
 ---
@@ -31,7 +32,7 @@ Performance work is most effective when grounded in production behavior. Perfora
 
 ### Prerequisites
 - IntelliJ IDEA 2025.1.2+ / Android Studio 2025.1.2+
-- Access to a Grafana Pyroscope instance (URL + optional Basic Auth)
+- API access to a Grafana Pyroscope instance or web access to the Google Cloud Profiler
 
 ### Installation
 1. Download the plugin from the JetBrains Plugin Repository
