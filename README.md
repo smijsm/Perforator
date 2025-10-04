@@ -39,7 +39,7 @@ Performance work is most effective when grounded in production behavior. Perfora
 2. Install via: File → Settings → Plugins → Install Plugin from Disk
 3. Restart IntelliJ IDEA
 
-### Configuration
+### Configuration (Pyroscope-only, not required for Google Profiler)
 Open Settings → Tools → Perforator and configure:
 - Base URL: e.g. `http://localhost:4040`
 - Optional Basic Auth: username/password
