@@ -95,7 +95,7 @@ Open Settings → Tools → Perforator and configure:
 
 ## 🗺️ Roadmap
 
-- Additional continuous profiling backends beyond Grafana Pyroscope
+- Additional continuous profiling backends beyond Grafana Pyroscope and Google Profiler
 - More languages (e.g., Scala)
 - Integrated flamegraph navigation
 
