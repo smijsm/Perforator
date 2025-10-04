@@ -51,6 +51,7 @@ Open Settings → Tools → Perforator and configure:
 ## 🎯 How to Use
 
 ### Option 1: Fetch from Grafana Pyroscope via API
+[![Using Perforator with Grafana Pyroscope](https://img.youtube.com/vi/QTJ3MyH7Ydw/0.jpg)](https://www.youtube.com/watch?v=QTJ3MyH7Ydw)
 1. Open a source file that belongs to the profiled service.
 2. Use Tools → Fetch Profiling Data.
 3. Gutter badges show inline metrics next to relevant lines.
@@ -62,6 +63,7 @@ Open Settings → Tools → Perforator and configure:
 9. Let your AI agent refactor your code to improve performance.
 
 ### Option 2: Load Google Cloud Profiler File
+[![Using Perforator with Google Cloud Profiler](https://img.youtube.com/vi/2wLag5WnM30/0.jpg)](https://www.youtube.com/watch?v=2wLag5WnM30)
 1. Download a .pb.gz file from Google Cloud Profiler (CPU time / Wall time / Heap)
 2. Use Tools → Load Profile File (.pb.gz).
 3. Select your downloaded profile file.
